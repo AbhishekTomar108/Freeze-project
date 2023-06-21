@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+<script defer src="https://pyscript.net/latest/pyscript.js"></script> -->
+</head>
+<body>
+    <py-script> print('Now you can!') </py-script>|
+
+    import time 
+import ahk
+from ahk import AHK, Hotkey
+
+try:                                                                                                                                                                         
+    ahk = AHK(executable_path="C:\\Program Files\\AutoHotkey\\AutoHotkeyU64.exe")                                                                                                                                                                           
+except:                                                                                                                                                                         
+    ahk = AHK(executable_path="C:\\Program Files\\AutoHotkey\\AutoHotkeyU32.exe")
+
+
+
+ahk.run_script('BlockInput, MouseMove')
+time.sleep(5)
+ahk.run_script('BlockInput, MouseMoveOff')
+
+# you should be able to run it this way, did not test. 
+
+ahk_Script=['BlockInput, MouseMove', 'sleep 5000', 'BlockInput, MouseMoveOff']
+
+for snipet in  ahk_Script:
+    ahk.run_script(snipet, blocking=True)
+</body>
+</html>
