@@ -46,7 +46,7 @@ def freeze_input():
         <title>Mouse and Keyboard Frozen</title>
     </head>
     <body>
-        <h1>Mouse and Keyboard Frozen</h1>
+        <h1>Mouse and Keyboard Frozen </h1>
     </body>
     </html>
     """
