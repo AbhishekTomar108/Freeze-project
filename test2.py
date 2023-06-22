@@ -1,5 +1,5 @@
 from flask import Flask
-import pyautogui
+# import pyautogui
 import keyboard
 
 keyboard.block_key('Win')
@@ -19,8 +19,8 @@ keyboard.block_key('f9')
 keyboard.block_key('f10')
 
 
-pyautogui.FAILSAFE = False  # Disable the fail-safe mechanism
-maxX, maxY = pyautogui.size()
+# pyautogui.FAILSAFE = False  # Disable the fail-safe mechanism
+# maxX, maxY = pyautogui.size()
 
 app = Flask(__name__)
 
@@ -54,4 +54,4 @@ def freeze_input():
 
 if __name__ == '__main__':
    
-    app.run(port=8001, host='localhost')
+    app.run()
