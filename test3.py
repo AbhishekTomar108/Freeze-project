@@ -1,6 +1,11 @@
+from flask import Flask
 from pynput import mouse
 
+
+app = Flask(__name__)
 # Create a custom mouse listener class
+
+@app.route('/')
 class MouseListener:
     def __init__(self):
         self.mouse = mouse.Controller()
@@ -25,3 +30,8 @@ class MouseListener:
 # Create an instance of the MouseListener class and start listening
 listener = MouseListener()
 listener.start()
+
+
+if __name__ == '__main__':
+   
+    app.run()
