@@ -45,20 +45,10 @@ def freeze_input():
     </html>
     """
 
-    while True:
-     pyautogui.moveTo(maxX/2, maxY/2)
+    
+    return html_response
     # Unblock the stop key
-    html_response = """
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>Mouse and Keyboard Frozen</title>
-    </head>
-    <body>
-        <h1>Mouse and Keyboard Frozen</h1>
-    </body>
-    </html>
-    """
+   
 
   
 
