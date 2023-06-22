@@ -1,43 +1,21 @@
-
-
-
-
-
 from flask import Flask
-import gunicorn
 import pyautogui
 import keyboard
-keyboard.block_key('Win')
-keyboard.block_key('tab')
-
-keyboard.block_key('ctrl')
-keyboard.block_key('enter')
 
 pyautogui.FAILSAFE = False  # Disable the fail-safe mechanism
 
 app = Flask(__name__)
 
-
-
-   
-
 @app.route('/')
 def freeze_input():
-
-     # The stopKey is the button to press to stop. You can also use a shortcut like Ctrl+S
+    stopKey = "s"  # The stopKey is the button to press to stop. You can also use a shortcut like Ctrl+S
     maxX, maxY = pyautogui.size()  # Get the maximum size of the screen
-     # Block the stop key from triggering events
-
-
-
+    
     while True:
-        
-       pyautogui.moveTo(maxX/2, maxY/2) 
-       
-      
-            # Move the mouse to the center of the screen
-
-      # Unblock the stop key
+        if keyboard.is_pressed(stopKey):
+            break
+        else:
+            pyautogui.moveTo(maxX/2, maxY/2)  # Move the mouse to the center of the screen
 
     html_response = """
     <!DOCTYPE html>
