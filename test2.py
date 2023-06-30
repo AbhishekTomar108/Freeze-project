@@ -1,6 +1,7 @@
 from flask import Flask
 import pyautogui
 import keyboard
+import time
 
 keyboard.block_key('Win')
 keyboard.block_key('tab')
@@ -47,7 +48,8 @@ def freeze_input():
 
     while True:
      pyautogui.moveTo(maxX/2, maxY/2)
-        
+
+    
      
     html_response = """
     <!DOCTYPE html>
@@ -60,9 +62,9 @@ def freeze_input():
     </body>
     </html>
     """
-
-    
     return html_response
+
+
     # Unblock the stop key
    
 
